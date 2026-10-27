@@ -404,7 +404,8 @@ Please send me the detailed proposal and quotation!`;
    ========================================================================= */
 function initStickyNavSpy() {
   const navTabs = document.querySelectorAll('.tab-nav-item');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('section[id], main[id]');
+  let lastActiveId = '';
 
   window.addEventListener('scroll', () => {
     let currentSectionId = '';
@@ -418,13 +419,17 @@ function initStickyNavSpy() {
       }
     });
 
-    navTabs.forEach(tab => {
-      tab.classList.remove('active');
-      if (tab.getAttribute('href') === `#${currentSectionId}`) {
-        tab.classList.add('active');
-      }
-    });
-  });
+    if (currentSectionId && currentSectionId !== lastActiveId) {
+      lastActiveId = currentSectionId;
+      navTabs.forEach(tab => {
+        const isActive = tab.getAttribute('href') === `#${currentSectionId}`;
+        tab.classList.toggle('active', isActive);
+        if (isActive && window.innerWidth <= 1024) {
+          tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
+    }
+  }, { passive: true });
 }
 
 // Global print function for Itinerary
