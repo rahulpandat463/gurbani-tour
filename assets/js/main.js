@@ -405,11 +405,10 @@ Please send me the detailed proposal and quotation!`;
 function initStickyNavSpy() {
   const navTabs = document.querySelectorAll('.tab-nav-item');
   const sections = document.querySelectorAll('section[id], main[id]');
-  let lastActiveId = '';
 
   window.addEventListener('scroll', () => {
     let currentSectionId = '';
-    const scrollPos = window.scrollY + 140;
+    const scrollPos = window.scrollY + 160;
 
     sections.forEach(sec => {
       const top = sec.offsetTop;
@@ -419,14 +418,9 @@ function initStickyNavSpy() {
       }
     });
 
-    if (currentSectionId && currentSectionId !== lastActiveId) {
-      lastActiveId = currentSectionId;
+    if (currentSectionId) {
       navTabs.forEach(tab => {
-        const isActive = tab.getAttribute('href') === `#${currentSectionId}`;
-        tab.classList.toggle('active', isActive);
-        if (isActive && window.innerWidth <= 1024) {
-          tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        }
+        tab.classList.toggle('active', tab.getAttribute('href') === `#${currentSectionId}`);
       });
     }
   }, { passive: true });
