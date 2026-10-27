@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Packages & Holiday Deals | Gurbani Tours and Travels</title>
+  <meta name="description" content="Browse hundreds of holiday tour packages for Kashmir, Goa, Kerala, Dubai, Bali, Thailand, and Europe. Compare itineraries and get 3 free customized quotes from verified agents.">
+  <meta name="keywords" content="Gurbani Tours and Travels, tour packages, holiday deals, budget tours, luxury holidays, honeymoon packages, travel quotes">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Trust Ribbon -->
+  <div class="top-announcement">
+    <div class="container">
+      <div class="promo-tag">
+        <span class="promo-badge"><i class="fa-solid fa-tags"></i> Wholesale Agent Rates</span>
+        <span class="promo-text">🎉 Save up to 30% on curated holiday packages! Use code: <span class="coupon-code" id="couponCode">GURBANISUMMER</span></span>
+      </div>
+      <div class="top-contacts">
+        <div class="top-live-badge"><span class="pulse-dot"></span> 250+ Verified Packages</div>
+        <a href="tel:+918048735999" class="top-contact-link"><i class="fa-solid fa-phone"></i> +91 80487 35999</a>
+        <a href="https://wa.me/918048735999" target="_blank" class="top-wa-link"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        <a href="contact.html#agent-portal" class="top-agent-link"><i class="fa-solid fa-briefcase"></i> Agent Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Gurbani Tours and Travels Home">
+          <div class="logo-badge"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="brand-text">
+            <div class="brand-title">GURBANI<span> TOURS & TRAVELS</span></div>
+            <div class="brand-tagline">TRUSTED HOLIDAY & TOUR SPECIALIST</div>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="packages.html" class="nav-link active">Tour Packages</a>
+          <a href="destinations.html" class="nav-link">Destinations</a>
+          <a href="services.html" class="nav-link">
+            Services <span class="nav-pill-badge">10</span>
+          </a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#reviews" class="nav-link">Reviews</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="https://wa.me/918048735999" target="_blank" class="btn-nav-wa">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <button class="btn-nav-quote btn-open-quote-modal">
+            <i class="fa-solid fa-comments-dollar"></i> Get 3 Free Quotes
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars" id="menuToggleIcon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer-content">
+        <div class="mobile-drawer-links">
+          <a href="index.html" class="mobile-drawer-link"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="packages.html" class="mobile-drawer-link active"><i class="fa-solid fa-suitcase-rolling"></i> Explore Packages</a>
+          <a href="destinations.html" class="mobile-drawer-link"><i class="fa-solid fa-map-location-dot"></i> Trending Destinations</a>
+          <a href="services.html" class="mobile-drawer-link"><i class="fa-solid fa-shield-heart"></i> All 10 Travel Services</a>
+          <a href="how-it-works.html" class="mobile-drawer-link"><i class="fa-solid fa-gears"></i> How It Works</a>
+          <a href="contact.html" class="mobile-drawer-link"><i class="fa-solid fa-headset"></i> 24x7 Help Desk</a>
+        </div>
+        <div class="mobile-drawer-cta">
+          <button class="btn btn-primary btn-open-quote-modal" style="width: 100%; justify-content: center;">
+            <i class="fa-solid fa-comments-dollar"></i> Get 3 Free Quotes
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-hero-banner">
+    <div class="container">
+      <div class="section-tag" style="background: rgba(255, 87, 34, 0.2); color: #ffab91; margin-bottom: 12px;">
+        <i class="fa-solid fa-box-archive"></i> Holiday Packages Marketplace
+      </div>
+      <h1>Explore <span>Tour Packages & Deals</span></h1>
+      <p>Click on any package card to open full day-wise itineraries, hotel details, and inclusions. Get 3 customized quotes from verified local agents.</p>
+    </div>
+  </section>
+
+  <!-- Packages Explorer Layout (Sidebar Filters + Results Grid) -->
+  <section class="py-60" style="background: #f8fafc;">
+    <div class="container">
+      <div class="packages-explorer-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="packages-sidebar">
+          <div class="sidebar-filter-header">
+            <h3><i class="fa-solid fa-sliders" style="color: var(--ht-orange);"></i> Filters</h3>
+            <button type="button" class="sidebar-reset-btn" id="resetFiltersBtn">Reset All</button>
+          </div>
+
+          <!-- Search by Destination / Keyword -->
+          <div class="filter-section-item">
+            <div class="filter-section-title">Keyword Search</div>
+            <div style="position: relative;">
+              <input type="text" id="packageSearchInput" class="form-control" placeholder="e.g. Kashmir, Pool Villa, Beach" style="font-size: 0.88rem; padding: 10px 12px;">
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="filter-section-item">
+            <div class="filter-section-title" style="display: flex; justify-content: space-between;">
+              <span>Max Budget:</span>
+              <strong id="pkgPriceDisplay" style="color: var(--ht-orange);">₹1,50,000</strong>
+            </div>
+            <input type="range" class="price-range-slider" id="pkgPriceRange" min="5000" max="150000" step="5000" value="150000">
+            <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: #94a3b8; margin-top: 6px;">
+              <span>₹5,000</span>
+              <span>₹1,50,000+</span>
+            </div>
+          </div>
+
+          <!-- Region / Location Filter -->
+          <div class="filter-section-item">
+            <div class="filter-section-title">Destination Region</div>
+            <div class="filter-checkbox-list">
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="region" value="north"> North India (Kashmir, Himachal)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="region" value="south"> South India (Kerala, Ooty)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="region" value="west"> West India (Goa, Rajasthan)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="region" value="islands"> Island Getaways (Andaman)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="region" value="international"> International (Dubai, Bali, Thailand)
+              </label>
+            </div>
+          </div>
+
+          <!-- Duration Filter -->
+          <div class="filter-section-item">
+            <div class="filter-section-title">Trip Duration</div>
+            <div class="filter-checkbox-list">
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="duration" value="short"> 3 to 4 Days (Quick Breaks)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="duration" value="medium"> 5 to 6 Days (Standard)
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="duration" value="long"> 7+ Days (Extended Holidays)
+              </label>
+            </div>
+          </div>
+
+          <!-- Theme Filter -->
+          <div class="filter-section-item">
+            <div class="filter-section-title">Holiday Theme</div>
+            <div class="filter-checkbox-list">
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="theme" value="honeymoon"> Honeymoon & Romantic
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="theme" value="family"> Family & Kids Friendly
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="theme" value="adventure"> Adventure & Wildlife
+              </label>
+              <label class="filter-checkbox-item">
+                <input type="checkbox" name="theme" value="luxury"> Luxury & Private Villas
+              </label>
+            </div>
+          </div>
+
+          <!-- Instant Help Box -->
+          <div style="background: var(--ht-orange-light); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+            <div style="font-weight: 800; font-size: 0.92rem; color: var(--ht-orange); margin-bottom: 4px;">Can't Find Your Route?</div>
+            <p style="font-size: 0.8rem; color: var(--primary-accent); margin-bottom: 12px;">Get a custom quote designed from scratch by our specialist agents.</p>
+            <button class="btn btn-primary btn-sm btn-open-quote-modal" style="width: 100%;">
+              <i class="fa-solid fa-pencil"></i> Custom Trip Request
+            </button>
+          </div>
+
+        </aside>
+
+        <!-- Main Packages Results Area -->
+        <main class="packages-results-main">
+          
+          <div class="packages-results-header">
+            <div class="results-count-text">
+              Showing <span id="packagesCountNum">8</span> Verified Tour Packages
+              <span style="font-size: 0.82rem; color: #10b981; font-weight: 700; margin-left: 10px;">
+                <i class="fa-solid fa-circle-info"></i> Click any card to open full itinerary & details
+              </span>
+            </div>
+            <div class="sort-dropdown-wrap">
+              <label for="packageSortSelect">Sort By:</label>
+              <select id="packageSortSelect" class="sort-select">
+                <option value="popular">Most Popular</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="duration-low">Duration: Short to Long</option>
+                <option value="duration-high">Duration: Long to Short</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Packages Grid -->
+          <div class="packages-grid" id="packagesGridContainer">
+            
+            <!-- Package 1: Kashmir -->
+            <div class="package-card package-card-item" data-title="Kashmir Gulmarg Houseboat" data-destination="kashmir" data-price="14999" data-days="6" data-region="north" data-duration="medium" data-theme="honeymoon family" onclick="openPackageDetail('kashmir')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80" alt="Kashmir Tour">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Top Seller</span>
+                  <span class="package-badge-tag secondary">4.9 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Srinagar • Gulmarg • Pahalgam</div>
+                <h3 class="package-title">Enchanting Kashmir with Dal Lake Houseboat & Gulmarg Gondola</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-bed"></i> 4★ Hotels & Houseboat</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Private AC Cab</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast & Dinners</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Shikara Ride</span>
+                </div>
+                <p class="package-highlights">Stay in a heritage Dal Lake houseboat, ride the Gulmarg Gondola to Phase 1 snow point, and take private cab rides across Betaab and Aru Valleys.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹14,999 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=kashmir" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Enchanting Kashmir Paradise (6D/5N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 2: Dubai -->
+            <div class="package-card package-card-item" data-title="Dubai Burj Khalifa Desert Safari" data-destination="dubai" data-price="28999" data-days="5" data-region="international" data-duration="medium" data-theme="luxury family" onclick="openPackageDetail('dubai')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai Cityscape">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Luxe Deal</span>
+                  <span class="package-badge-tag secondary">5.0 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Dubai Downtown • Marina • Desert</div>
+                <h3 class="package-title">Dubai Glamour Tour with Burj Khalifa 124th Floor & Red Dune Safari</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Downtown Hotel</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Private Chauffeur</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> BBQ Desert Dinner</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-passport"></i> Fast-Track Visa</span>
+                </div>
+                <p class="package-highlights">VIP entry to Burj Khalifa 124th floor, 4x4 dune bashing with belly dancing BBQ dinner, and luxury Marina yacht cruise with international buffet.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹28,999 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=dubai" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Dubai Glamour Tour (5D/4N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 3: Bali -->
+            <div class="package-card package-card-item" data-title="Bali Pool Villa Ubud Swing" data-destination="bali" data-price="22999" data-days="5" data-region="international" data-duration="medium" data-theme="honeymoon luxury" onclick="openPackageDetail('bali')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali Pool Villa">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Couple Special</span>
+                  <span class="package-badge-tag secondary">4.9 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Kuta Beach • Ubud • Tanjung Benoa</div>
+                <h3 class="package-title">Bali Tropical Romance with Private Pool Villa & Watersports</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-house-chimney"></i> Private Pool Villa</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Private Dedicated Cab</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Parasailing & Jet Ski</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-camera"></i> Ubud Swing Entry</span>
+                </div>
+                <p class="package-highlights">Stay 2 nights in Kuta and 2 nights in a private jungle pool villa in Ubud. Includes Uluwatu sunset fire dance and candlelit Indian dinners.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹22,999 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=bali" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Bali Tropical Romance (5D/4N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 4: Kerala -->
+            <div class="package-card package-card-item" data-title="Kerala Munnar Alleppey Houseboat" data-destination="kerala" data-price="12499" data-days="5" data-region="south" data-duration="medium" data-theme="family honeymoon" onclick="openPackageDetail('kerala')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Kerala Backwaters">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Nature Getaway</span>
+                  <span class="package-badge-tag secondary">4.8 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Cochin • Munnar • Thekkady • Alleppey</div>
+                <h3 class="package-title">Kerala God's Own Country: Munnar Tea Hills & Private Houseboat Cruise</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Deluxe AC Houseboat</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> AC Sedan Chauffeur</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> All Meals on Boat</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-leaf"></i> Tea Factory Tour</span>
+                </div>
+                <p class="package-highlights">Explore misty Munnar tea plantations, spice gardens in Thekkady, and enjoy an overnight stay on a private backwater houseboat in Alleppey.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹12,499 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=kerala" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Kerala God's Own Country (5D/4N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 5: Goa -->
+            <div class="package-card package-card-item" data-title="Goa Beach Resort Scuba" data-destination="goa" data-price="8499" data-days="4" data-region="west" data-duration="short" data-theme="adventure budget" onclick="openPackageDetail('goa')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80" alt="Goa Beaches">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Weekend Hit</span>
+                  <span class="package-badge-tag secondary">4.9 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> North Goa • South Goa • Mandovi</div>
+                <h3 class="package-title">Vibrant Goa Holiday with Beachfront Resort & Scuba Diving Combo</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Beach Resort</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Sightseeing Cab</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Scuba Diving + Video</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-martini-glass"></i> Dinner Cruise Pass</span>
+                </div>
+                <p class="package-highlights">Stay near Baga/Calangute, enjoy Grand Island scuba diving with underwater video, and embark on a romantic Mandovi River DJ dinner cruise.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹8,499 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=goa" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Vibrant Goa Holiday (4D/3N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 6: Thailand -->
+            <div class="package-card package-card-item" data-title="Thailand Phuket Krabi Island" data-destination="thailand" data-price="21499" data-days="6" data-region="international" data-duration="medium" data-theme="adventure honeymoon" onclick="openPackageDetail('thailand')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Thailand Krabi">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Visa Free</span>
+                  <span class="package-badge-tag secondary">4.8 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Phuket • Phi Phi Island • Krabi</div>
+                <h3 class="package-title">Exotic Thailand: Phuket & Krabi with Speedboat Phi Phi Tour</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Patong Resort</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Speedboat Island Tour</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> Daily Breakfast</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Airport Transfers</span>
+                </div>
+                <p class="package-highlights">Speedboat tour of Phi Phi Islands & Maya Bay, 4 Islands Krabi tour by traditional longtail boat, and lively Bangla Road nightlife exploration.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹21,499 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=thailand" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Exotic Thailand (6D/5N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 7: Rajasthan -->
+            <div class="package-card package-card-item" data-title="Rajasthan Royal Forts Udaipur" data-destination="rajasthan" data-price="13800" data-days="5" data-region="west" data-duration="medium" data-theme="family honeymoon" onclick="openPackageDetail('rajasthan')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" alt="Rajasthan Hawa Mahal">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Royal Heritage</span>
+                  <span class="package-badge-tag secondary">4.9 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Jaipur • Jodhpur • Udaipur</div>
+                <h3 class="package-title">Royal Rajasthan Heritage: Amber Fort, Lake Pichola & Heritage Haveli</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-archway"></i> Heritage Haveli Stay</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Private AC Innova</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> Rajasthani Dinners</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Lake Pichola Boat</span>
+                </div>
+                <p class="package-highlights">Marvel at Jaipur's Amber Fort and City Palace, explore Mehrangarh Fort in the Blue City of Jodhpur, and boat ride on Lake Pichola in Udaipur.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹13,800 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=rajasthan" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Royal Rajasthan Heritage (5D/4N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Package 8: Andaman -->
+            <div class="package-card package-card-item" data-title="Andaman Havelock Radhanagar Scuba" data-destination="andaman" data-price="17999" data-days="5" data-region="islands" data-duration="medium" data-theme="honeymoon adventure" onclick="openPackageDetail('andaman')">
+              <div class="package-media">
+                <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80" alt="Andaman Havelock Island">
+                <div class="package-badges-top">
+                  <span class="package-badge-tag">Island Dream</span>
+                  <span class="package-badge-tag secondary">4.9 ★</span>
+                </div>
+                <div class="package-duration-pill"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</div>
+              </div>
+              <div class="package-body">
+                <div class="package-location"><i class="fa-solid fa-location-dot"></i> Port Blair • Havelock • Neil Island</div>
+                <h3 class="package-title">Pristine Andaman Islands: Havelock Radhanagar Beach & Scuba Tour</h3>
+                <div class="package-inclusions-chips">
+                  <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Island Resort</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-ferry"></i> Makruzz Cruise Ferry</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Snorkeling Session</span>
+                  <span class="inclusion-chip"><i class="fa-solid fa-landmark"></i> Cellular Jail Light Show</span>
+                </div>
+                <p class="package-highlights">Visit Asia's best Radhanagar Beach, travel between islands on high-speed Makruzz catamaran cruise, and witness Cellular Jail Light & Sound show.</p>
+                <div class="package-footer">
+                  <div class="package-price-wrap">
+                    <span class="price-start-label">Starting Price</span>
+                    <div class="package-price">₹17,999 <span>/ person</span></div>
+                  </div>
+                  <div class="package-card-buttons">
+                    <a href="package-detail.html?pkg=andaman" class="btn-view-package" onclick="event.stopPropagation();"><i class="fa-solid fa-eye"></i> Details</a>
+                    <button type="button" class="btn-get-quote" data-package="Pristine Andaman Islands (5D/4N)">Get 3 Quotes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mega Footer (Complete Gurbani Tours Navigation) -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Top Stats Bar -->
+      <div class="footer-top-stats">
+        <div class="footer-stat-box">
+          <h3>75,000<span>+</span></h3>
+          <p>Verified Travel Agents</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>1,00,00,000<span>+</span></h3>
+          <p>Happy Travelers</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>10,000<span>+</span></h3>
+          <p>Destinations Served</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>100<span>%</span></h3>
+          <p>Buyer Care Guarantee</p>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="footer-nav-grid">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand-col">
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <div class="logo-badge"><i class="fa-solid fa-paper-plane"></i></div>
+            <div class="brand-text">
+              <div class="brand-title" style="color: white;">GURBANI<span style="color: var(--ht-orange);"> TOURS & TRAVELS</span></div>
+              <div class="brand-tagline">TRUSTED HOLIDAY & TOUR SPECIALIST</div>
+            </div>
+          </div>
+          <p>Gurbani Tours and Travels connects holidaymakers directly with audited, licensed local travel experts to provide custom-made tour packages with transparent pricing.</p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/918048735999" target="_blank" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: About Gurbani Tours -->
+        <div>
+          <div class="footer-col-title">About Gurbani Tours</div>
+          <div class="footer-links-list">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="services.html" class="footer-link">All 10 Travel Services</a>
+            <a href="contact.html" class="footer-link">Contact Us & Support</a>
+            <a href="contact.html#locations" class="footer-link">Office Locations (Noida HQ)</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Partner Program</a>
+            <a href="how-it-works.html#guarantee" class="footer-link">Buyer Protection Policy</a>
+          </div>
+        </div>
+
+        <!-- Col 3: For Travelers -->
+        <div>
+          <div class="footer-col-title">For Travelers</div>
+          <div class="footer-links-list">
+            <a href="packages.html" class="footer-link">Explore Tour Packages</a>
+            <a href="destinations.html" class="footer-link">Trending Destinations</a>
+            <a href="packages.html?theme=honeymoon" class="footer-link">Honeymoon Packages</a>
+            <a href="packages.html?theme=family" class="footer-link">Family Vacations</a>
+            <a href="packages.html?theme=weekend" class="footer-link">Weekend Getaways</a>
+            <a href="index.html#reviews" class="footer-link">Traveler Reviews & Ratings</a>
+          </div>
+        </div>
+
+        <!-- Col 4: For Travel Agents -->
+        <div>
+          <div class="footer-col-title">For Travel Agents</div>
+          <div class="footer-links-list">
+            <a href="contact.html#agent-portal" class="footer-link">Travel Agent Registration</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Portal Login</a>
+            <a href="how-it-works.html#agents" class="footer-link">Lead Delivery System</a>
+            <a href="how-it-works.html#faq-agents" class="footer-link">Agent Onboarding FAQ</a>
+            <a href="services.html#service-b2b" class="footer-link">B2B DMC Marketing</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Learning Center</a>
+          </div>
+        </div>
+
+        <!-- Col 5: Legal & Trust -->
+        <div>
+          <div class="footer-col-title">Trusted Partner</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">100% Safe & Secure Booking</a>
+            <a href="contact.html" class="footer-link">Verified Agent Guarantee</a>
+            <a href="contact.html" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Terms & Conditions</a>
+            <a href="contact.html" class="footer-link">Refund & Cancellation</a>
+            <a href="contact.html" class="footer-link">Customer Grievance Desk</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick SEO Destination Links -->
+      <div class="footer-seo-tags-wrap">
+        <div class="seo-tags-row">
+          <strong>Popular India Packages:</strong>
+          <a href="packages.html?dest=kashmir">Kashmir Packages</a> •
+          <a href="packages.html?dest=goa">Goa Tour Packages</a> •
+          <a href="packages.html?dest=kerala">Kerala Packages</a> •
+          <a href="packages.html?dest=manali">Manali Tour Packages</a> •
+          <a href="packages.html?dest=rajasthan">Rajasthan Packages</a> •
+          <a href="packages.html?dest=andaman">Andaman Tour Packages</a> •
+          <a href="packages.html?dest=ladakh">Ladakh Leh Packages</a> •
+          <a href="packages.html?dest=shimla">Shimla Packages</a> •
+          <a href="packages.html?dest=darjeeling">Darjeeling Packages</a> •
+          <a href="packages.html?dest=sikkim">Sikkim Gangtok Packages</a> •
+          <a href="packages.html?dest=uttarakhand">Nainital & Corbett Packages</a>
+        </div>
+        <div class="seo-tags-row">
+          <strong>International Packages:</strong>
+          <a href="packages.html?dest=dubai">Dubai Packages</a> •
+          <a href="packages.html?dest=bali">Bali Tour Packages</a> •
+          <a href="packages.html?dest=thailand">Thailand Tour Packages</a> •
+          <a href="packages.html?dest=singapore">Singapore Packages</a> •
+          <a href="packages.html?dest=maldives">Maldives Packages</a> •
+          <a href="packages.html?dest=vietnam">Vietnam Packages</a> •
+          <a href="packages.html?dest=malaysia">Malaysia Tour Packages</a> •
+          <a href="packages.html?dest=switzerland">Europe & Switzerland Tour</a> •
+          <a href="packages.html?dest=srilanka">Sri Lanka Tour Packages</a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Gurbani Tours and Travels Private Limited. All Rights Reserved. E-75, 2nd Floor, Sector 63, Noida - 201301, Uttar Pradesh, India.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <span>ISO 9001:2015 Certified</span>
+          <span>Made with ❤️ for Travelers</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Universal Plan Trip Modal -->
+  <div class="modal-overlay" id="planTripModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <button class="modal-close-btn" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h3><i class="fa-solid fa-paper-plane" style="color: var(--ht-orange);"></i> Get 3 Free Quotes for Your Holiday</h3>
+        <p>Verified destination specialists will compete to design your dream package at the lowest price.</p>
+      </div>
+      <div class="modal-body">
+        <form id="planTripForm">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="modalDestination">Destination / Package *</label>
+              <input type="text" id="modalDestination" class="form-control" required value="Holiday Tour Package">
+            </div>
+            <div class="form-group">
+              <label for="modalFromCity">Departure City *</label>
+              <input type="text" id="modalFromCity" class="form-control" required value="New Delhi">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="modalName">Full Name *</label>
+              <input type="text" id="modalName" class="form-control" required value="Rahul Sharma">
+            </div>
+            <div class="form-group">
+              <label for="modalPhone">WhatsApp / Mobile *</label>
+              <input type="tel" id="modalPhone" class="form-control" required value="9876543210">
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="modalAgree" checked required>
+            <label for="modalAgree">I want 3 certified travel agents to call or WhatsApp me with customized itineraries.</label>
+          </div>
+          <button type="submit" class="btn-modal-submit">
+            <i class="fa-solid fa-paper-plane"></i> Submit & Receive 3 Free Quotes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

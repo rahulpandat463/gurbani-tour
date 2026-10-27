@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Travel Destinations & Guides | Gurbani Tours and Travels</title>
+  <meta name="description" content="Discover top domestic and international travel destinations. Explore Kashmir, Goa, Kerala, Dubai, Bali, Thailand, and Europe with local verified agent quotes and trip planning guides.">
+  <meta name="keywords" content="Gurbani Tours destinations, places to visit India, international holiday destinations, best time to visit, travel guides">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Trust Ribbon -->
+  <div class="top-announcement">
+    <div class="container">
+      <div class="promo-tag">
+        <span class="promo-badge"><i class="fa-solid fa-map-location-dot"></i> 10,000+ Places Served</span>
+        <span class="promo-text">🎉 Plan with certified local ground specialists! Coupon: <span class="coupon-code" id="couponCode">GURBANISUMMER</span></span>
+      </div>
+      <div class="top-contacts">
+        <div class="top-live-badge"><span class="pulse-dot"></span> Verified DMC Network</div>
+        <a href="tel:+918048735999" class="top-contact-link"><i class="fa-solid fa-phone"></i> +91 80487 35999</a>
+        <a href="https://wa.me/918048735999" target="_blank" class="top-wa-link"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        <a href="contact.html#agent-portal" class="top-agent-link"><i class="fa-solid fa-briefcase"></i> Agent Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Gurbani Tours and Travels Home">
+          <div class="logo-badge"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="brand-text">
+            <div class="brand-title">GURBANI<span> TOURS & TRAVELS</span></div>
+            <div class="brand-tagline">TRUSTED HOLIDAY & TOUR SPECIALIST</div>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="packages.html" class="nav-link">Tour Packages</a>
+          <a href="destinations.html" class="nav-link active">Destinations</a>
+          <a href="services.html" class="nav-link">
+            Services <span class="nav-pill-badge">10</span>
+          </a>
+          <a href="how-it-works.html" class="nav-link">How It Works</a>
+          <a href="index.html#reviews" class="nav-link">Reviews</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="https://wa.me/918048735999" target="_blank" class="btn-nav-wa">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <button class="btn-nav-quote btn-open-quote-modal">
+            <i class="fa-solid fa-comments-dollar"></i> Get 3 Free Quotes
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars" id="menuToggleIcon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer-content">
+        <div class="mobile-drawer-links">
+          <a href="index.html" class="mobile-drawer-link"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="packages.html" class="mobile-drawer-link"><i class="fa-solid fa-suitcase-rolling"></i> Explore Packages</a>
+          <a href="destinations.html" class="mobile-drawer-link active"><i class="fa-solid fa-map-location-dot"></i> Trending Destinations</a>
+          <a href="services.html" class="mobile-drawer-link"><i class="fa-solid fa-shield-heart"></i> All 10 Travel Services</a>
+          <a href="how-it-works.html" class="mobile-drawer-link"><i class="fa-solid fa-gears"></i> How It Works</a>
+          <a href="contact.html" class="mobile-drawer-link"><i class="fa-solid fa-headset"></i> 24x7 Help Desk</a>
+        </div>
+        <div class="mobile-drawer-cta">
+          <button class="btn btn-primary btn-open-quote-modal" style="width: 100%; justify-content: center;">
+            <i class="fa-solid fa-comments-dollar"></i> Get 3 Free Quotes
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero-banner">
+    <div class="container">
+      <div class="section-tag" style="background: rgba(255, 87, 34, 0.2); color: #ffab91; margin-bottom: 12px;">
+        <i class="fa-solid fa-earth-asia"></i> Curated Travel Directory
+      </div>
+      <h1>Explore <span>Trending Destinations</span></h1>
+      <p>Discover picturesque hill stations, sun-drenched beaches, royal heritage palaces, and international wonderlands with certified local travel planners.</p>
+    </div>
+  </section>
+
+  <!-- Destinations Filterable Showcase -->
+  <section class="py-60" style="background: white;">
+    <div class="container">
+      
+      <!-- Category Tabs -->
+      <div class="filter-tabs-row">
+        <button class="filter-tab-btn active" data-dest-filter="all">All Destinations</button>
+        <button class="filter-tab-btn" data-dest-filter="india">Incredible India</button>
+        <button class="filter-tab-btn" data-dest-filter="international">International Hotspots</button>
+        <button class="filter-tab-btn" data-dest-filter="honeymoon">Honeymoon Romantic</button>
+        <button class="filter-tab-btn" data-dest-filter="budget">Budget Friendly</button>
+      </div>
+
+      <div class="destinations-grid">
+        
+        <!-- Destination 1: Kashmir -->
+        <div class="destination-card" data-category="india honeymoon" onclick="openPlanTripModal({destination: 'Kashmir & Gulmarg'})">
+          <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80" alt="Kashmir" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge"><i class="fa-solid fa-snowflake"></i> Best in Summer/Winter</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (18k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Kashmir Valley</h3>
+            <p class="dest-packages-count">Srinagar • Gulmarg Gondola • Pahalgam Valleys • Sonmarg</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹12,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 2: Dubai -->
+        <div class="destination-card" data-category="international luxury honeymoon" onclick="openPlanTripModal({destination: 'Dubai Luxury Tour'})">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge"><i class="fa-solid fa-crown"></i> Luxe Destination</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 5.0 (24k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Dubai, UAE</h3>
+            <p class="dest-packages-count">Burj Khalifa • Marina Yacht • Desert Safari • Miracle Garden</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹26,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 3: Bali -->
+        <div class="destination-card" data-category="international honeymoon" onclick="openPlanTripModal({destination: 'Bali Indonesia'})">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge"><i class="fa-solid fa-heart"></i> Couple Favorite</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (16k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Bali, Indonesia</h3>
+            <p class="dest-packages-count">Ubud Jungle • Kuta & Seminyak • Uluwatu Clifftop • Nusa Penida</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹21,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 4: Goa -->
+        <div class="destination-card" data-category="india budget" onclick="openPlanTripModal({destination: 'Goa Beaches'})">
+          <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80" alt="Goa" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Beach Life</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (31k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Goa Beachfront</h3>
+            <p class="dest-packages-count">Baga • Calangute • Scuba Island • Mandovi Cruise • Fort Aguada</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹7,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 5: Kerala -->
+        <div class="destination-card" data-category="india honeymoon budget" onclick="openPlanTripModal({destination: 'Kerala God\'s Own Country'})">
+          <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Kerala" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Backwaters & Hills</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.8 (14k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Kerala & Munnar</h3>
+            <p class="dest-packages-count">Munnar Tea Hills • Alleppey Houseboat • Thekkady Wildlife</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹11,499</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 6: Thailand -->
+        <div class="destination-card" data-category="international budget" onclick="openPlanTripModal({destination: 'Thailand Phuket & Krabi'})">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Thailand" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Visa Free for Indians</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.8 (21k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Thailand Tropical</h3>
+            <p class="dest-packages-count">Phuket Beaches • Phi Phi Island • Bangkok Temples • Krabi</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹19,499</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 7: Rajasthan -->
+        <div class="destination-card" data-category="india honeymoon" onclick="openPlanTripModal({destination: 'Rajasthan Heritage'})">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" alt="Rajasthan" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Royal Palaces</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (19k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Rajasthan Royal</h3>
+            <p class="dest-packages-count">Jaipur Pink City • Udaipur Lake City • Jodhpur Blue City</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹13,800</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 8: Singapore -->
+        <div class="destination-card" data-category="international luxury" onclick="openPlanTripModal({destination: 'Singapore & Sentosa'})">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80" alt="Singapore" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Modern Metropolis</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 5.0 (15k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Singapore & Sentosa</h3>
+            <p class="dest-packages-count">Universal Studios • Marina Bay Sands • Gardens by the Bay</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹34,500</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 9: Himachal Pradesh -->
+        <div class="destination-card" data-category="india budget honeymoon" onclick="openPlanTripModal({destination: 'Himachal Manali & Shimla'})">
+          <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80" alt="Manali" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Snow & Valleys</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.8 (22k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Manali & Shimla</h3>
+            <p class="dest-packages-count">Solang Valley • Rohtang Pass • Mall Road • Kufri Snow</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹9,499</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 10: Maldives -->
+        <div class="destination-card" data-category="international luxury honeymoon" onclick="openPlanTripModal({destination: 'Maldives Overwater Resort'})">
+          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge"><i class="fa-solid fa-gem"></i> Ultra Luxury</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 5.0 (11k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Maldives Resorts</h3>
+            <p class="dest-packages-count">Overwater Ocean Villa • Seaplane Transfer • All-Inclusive Meals</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹48,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 11: Andaman Islands -->
+        <div class="destination-card" data-category="india honeymoon" onclick="openPlanTripModal({destination: 'Andaman Islands'})">
+          <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80" alt="Andaman" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Turquoise Seas</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (13k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Andaman Islands</h3>
+            <p class="dest-packages-count">Radhanagar Beach • Scuba Diving • Catamaran Ferry • Neil Island</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹17,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 12: Switzerland & Paris -->
+        <div class="destination-card" data-category="international luxury" onclick="openPlanTripModal({destination: 'Switzerland & Paris Tour'})">
+          <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Switzerland" class="dest-img-bg">
+          <div class="dest-card-overlay"></div>
+          <div class="dest-top-badge">Dream Europe</div>
+          <div class="dest-top-rating"><i class="fa-solid fa-star"></i> 4.9 (9k+ reviews)</div>
+          <div class="dest-card-content">
+            <h3 class="dest-title">Switzerland & Paris</h3>
+            <p class="dest-packages-count">Mt. Titlis Cable Car • Lucerne • Eiffel Tower • Seine River Cruise</p>
+            <div class="dest-price-row">
+              <div class="dest-starting-price">Starting From<strong>₹89,999</strong></div>
+              <span class="btn-dest-explore">Get 3 Quotes</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Mega Footer (Complete Gurbani Tours Navigation) -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Top Stats Bar -->
+      <div class="footer-top-stats">
+        <div class="footer-stat-box">
+          <h3>75,000<span>+</span></h3>
+          <p>Verified Travel Agents</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>1,00,00,000<span>+</span></h3>
+          <p>Happy Travelers</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>10,000<span>+</span></h3>
+          <p>Destinations Served</p>
+        </div>
+        <div class="footer-stat-box">
+          <h3>100<span>%</span></h3>
+          <p>Buyer Care Guarantee</p>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="footer-nav-grid">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand-col">
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <div class="logo-badge"><i class="fa-solid fa-paper-plane"></i></div>
+            <div class="brand-text">
+              <div class="brand-title" style="color: white;">GURBANI<span style="color: var(--ht-orange);"> TOURS & TRAVELS</span></div>
+              <div class="brand-tagline">TRUSTED HOLIDAY & TOUR SPECIALIST</div>
+            </div>
+          </div>
+          <p>Gurbani Tours and Travels connects holidaymakers directly with audited, licensed local travel experts to provide custom-made tour packages with transparent pricing.</p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/918048735999" target="_blank" class="footer-social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: About Gurbani Tours -->
+        <div>
+          <div class="footer-col-title">About Gurbani Tours</div>
+          <div class="footer-links-list">
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="services.html" class="footer-link">All 10 Travel Services</a>
+            <a href="contact.html" class="footer-link">Contact Us & Support</a>
+            <a href="contact.html#locations" class="footer-link">Office Locations (Noida HQ)</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Partner Program</a>
+            <a href="how-it-works.html#guarantee" class="footer-link">Buyer Protection Policy</a>
+          </div>
+        </div>
+
+        <!-- Col 3: For Travelers -->
+        <div>
+          <div class="footer-col-title">For Travelers</div>
+          <div class="footer-links-list">
+            <a href="packages.html" class="footer-link">Explore Tour Packages</a>
+            <a href="destinations.html" class="footer-link">Trending Destinations</a>
+            <a href="packages.html?theme=honeymoon" class="footer-link">Honeymoon Packages</a>
+            <a href="packages.html?theme=family" class="footer-link">Family Vacations</a>
+            <a href="packages.html?theme=weekend" class="footer-link">Weekend Getaways</a>
+            <a href="index.html#reviews" class="footer-link">Traveler Reviews & Ratings</a>
+          </div>
+        </div>
+
+        <!-- Col 4: For Travel Agents -->
+        <div>
+          <div class="footer-col-title">For Travel Agents</div>
+          <div class="footer-links-list">
+            <a href="contact.html#agent-portal" class="footer-link">Travel Agent Registration</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Portal Login</a>
+            <a href="how-it-works.html#agents" class="footer-link">Lead Delivery System</a>
+            <a href="how-it-works.html#faq-agents" class="footer-link">Agent Onboarding FAQ</a>
+            <a href="services.html#service-b2b" class="footer-link">B2B DMC Marketing</a>
+            <a href="contact.html#agent-portal" class="footer-link">Agent Learning Center</a>
+          </div>
+        </div>
+
+        <!-- Col 5: Legal & Trust -->
+        <div>
+          <div class="footer-col-title">Trusted Partner</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">100% Safe & Secure Booking</a>
+            <a href="contact.html" class="footer-link">Verified Agent Guarantee</a>
+            <a href="contact.html" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Terms & Conditions</a>
+            <a href="contact.html" class="footer-link">Refund & Cancellation</a>
+            <a href="contact.html" class="footer-link">Customer Grievance Desk</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick SEO Destination Links -->
+      <div class="footer-seo-tags-wrap">
+        <div class="seo-tags-row">
+          <strong>Popular India Packages:</strong>
+          <a href="packages.html?dest=kashmir">Kashmir Packages</a> •
+          <a href="packages.html?dest=goa">Goa Tour Packages</a> •
+          <a href="packages.html?dest=kerala">Kerala Packages</a> •
+          <a href="packages.html?dest=manali">Manali Tour Packages</a> •
+          <a href="packages.html?dest=rajasthan">Rajasthan Packages</a> •
+          <a href="packages.html?dest=andaman">Andaman Tour Packages</a> •
+          <a href="packages.html?dest=ladakh">Ladakh Leh Packages</a> •
+          <a href="packages.html?dest=shimla">Shimla Packages</a> •
+          <a href="packages.html?dest=darjeeling">Darjeeling Packages</a> •
+          <a href="packages.html?dest=sikkim">Sikkim Gangtok Packages</a> •
+          <a href="packages.html?dest=uttarakhand">Nainital & Corbett Packages</a>
+        </div>
+        <div class="seo-tags-row">
+          <strong>International Packages:</strong>
+          <a href="packages.html?dest=dubai">Dubai Packages</a> •
+          <a href="packages.html?dest=bali">Bali Tour Packages</a> •
+          <a href="packages.html?dest=thailand">Thailand Tour Packages</a> •
+          <a href="packages.html?dest=singapore">Singapore Packages</a> •
+          <a href="packages.html?dest=maldives">Maldives Packages</a> •
+          <a href="packages.html?dest=vietnam">Vietnam Packages</a> •
+          <a href="packages.html?dest=malaysia">Malaysia Tour Packages</a> •
+          <a href="packages.html?dest=switzerland">Europe & Switzerland Tour</a> •
+          <a href="packages.html?dest=srilanka">Sri Lanka Tour Packages</a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Gurbani Tours and Travels Private Limited. All Rights Reserved. E-75, 2nd Floor, Sector 63, Noida - 201301, Uttar Pradesh, India.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <span>ISO 9001:2015 Certified</span>
+          <span>Made with ❤️ for Travelers</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Universal Plan Trip Modal -->
+  <div class="modal-overlay" id="planTripModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <button class="modal-close-btn" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h3><i class="fa-solid fa-paper-plane" style="color: var(--ht-orange);"></i> Get 3 Free Quotes for Your Destination</h3>
+        <p>Verified destination specialists will compete to design your dream package at the lowest price.</p>
+      </div>
+      <div class="modal-body">
+        <form id="planTripForm">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="modalDestination">Destination *</label>
+              <input type="text" id="modalDestination" class="form-control" required value="Kashmir & Gulmarg">
+            </div>
+            <div class="form-group">
+              <label for="modalFromCity">Departure City *</label>
+              <input type="text" id="modalFromCity" class="form-control" required value="New Delhi">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="modalName">Full Name *</label>
+              <input type="text" id="modalName" class="form-control" required value="Rahul Sharma">
+            </div>
+            <div class="form-group">
+              <label for="modalPhone">WhatsApp / Mobile *</label>
+              <input type="tel" id="modalPhone" class="form-control" required value="9876543210">
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="modalAgree" checked required>
+            <label for="modalAgree">I want 3 certified travel agents to call or WhatsApp me with customized itineraries.</label>
+          </div>
+          <button type="submit" class="btn-modal-submit">
+            <i class="fa-solid fa-paper-plane"></i> Submit & Receive 3 Free Quotes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
