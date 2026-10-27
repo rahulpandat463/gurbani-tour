@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Travel Services & Features | AuraTravels (Hello Travel Complete Suite)</title>
+  <meta name="description" content="Explore our complete range of holiday services: Flight booking, handpicked hotels, private chauffeur transfers, guaranteed Indian & pure veg meals, fast-track visas, and 24x7 WhatsApp concierge.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .service-hero-banner {
+      background: linear-gradient(135deg, #0a0f1d 0%, #0f172a 50%, #134e4a 100%);
+      color: white;
+      padding: 60px 0 50px;
+      text-align: center;
+      position: relative;
+    }
+    .service-hero-banner h1 {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+    .service-hero-banner p {
+      max-width: 800px;
+      margin: 0 auto 24px;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+    }
+    .service-detail-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .service-detail-grid.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .service-detail-grid.reverse .service-detail-text {
+      order: 2;
+    }
+    .service-detail-grid.reverse .service-detail-visual {
+      order: 1;
+    }
+    .service-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .service-detail-text h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .service-detail-text p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+    .service-points-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .service-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .service-point-item i {
+      color: var(--brand);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+    .service-detail-visual {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-light);
+      position: relative;
+    }
+    .service-detail-visual img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+    .service-visual-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+      padding: 20px;
+      color: white;
+    }
+    .workflow-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .workflow-step-card {
+      background: white;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .step-number-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--brand-gradient);
+      color: white;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+    .workflow-step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .workflow-step-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .service-detail-grid, .service-detail-grid.reverse {
+        grid-template-columns: 1fr;
+      }
+      .service-detail-grid.reverse .service-detail-text,
+      .service-detail-grid.reverse .service-detail-visual {
+        order: initial;
+      }
+      .workflow-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .workflow-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <div class="container">
+      <div class="promo-tag">
+        <span class="promo-badge">All-in-One Travel</span>
+        <span>Every service included with 100% price transparency and 24/7 dedicated local concierge!</span>
+      </div>
+      <div class="top-contacts">
+        <a href="tel:+918046801919"><i class="fa-solid fa-phone"></i> +91 80468 01919</a>
+        <a href="index.html#bookingModal" class="btn-open-modal"><i class="fa-solid fa-bolt"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-symbol"><i class="fa-solid fa-compass"></i></div>
+          <div class="brand-text">
+            <h1>Aura<span>Travels</span></h1>
+            <div class="brand-tagline">Tours & Holidays • Setu Luxe</div>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Bali Package</a>
+          <a href="services.html" class="nav-link active">Services Guide</a>
+          <a href="index.html#itinerary" class="nav-link">Itinerary</a>
+          <a href="index.html#inclusions" class="nav-link">Inclusions</a>
+          <a href="index.html#cities" class="nav-link">Cities</a>
+          <a href="index.html#faq" class="nav-link">FAQ</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Package</a>
+          <a href="index.html#bookingModal" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Services Hero Banner -->
+  <section class="service-hero-banner">
+    <div class="container">
+      <div class="tag-badge tag-customizable" style="margin-bottom: 12px; background: rgba(255,255,255,0.15); color: #2dd4bf; border-color: rgba(255,255,255,0.2);">
+        <i class="fa-solid fa-sparkles"></i> Hello Travel & TravelSetu Full Service Architecture
+      </div>
+      <h1>Hamari Services Kaisi Hongi & Kaisi Show Hongi?</h1>
+      <p>
+        Ek comprehensive travel platform me flights se lekar private cabs, pure veg Indian meals, fast e-visas, aur ground support tak sab kuch ek hi smooth window me milta hai. Neeche dekhein hamari har ek service ka complete breakdown:
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#service-flights" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">✈️ Flights & Cabs</a>
+        <a href="#service-hotels" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">🏨 Hotels & Villas</a>
+        <a href="#service-food" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">🍲 Indian Food</a>
+        <a href="#service-visas" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">🛂 Visas & Safety</a>
+        <a href="#workflow" class="btn btn-primary">⚡ How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 1: Flight & Chauffeur Network -->
+  <section class="service-detail-section" id="service-flights">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-text">
+          <div class="service-badge-pill"><i class="fa-solid fa-plane"></i> Service 01 • Transportation</div>
+          <h2>Flight Booking Assistance & 100% Private Chauffeurs</h2>
+          <p>
+            Hello Travel par aksar sirf inquiry form hota hai jahan alag-alag agents call karte hain. Hum aapko direct flight ticketing support aur Bali me 100% private, sanitized AC vehicles provide karte hain.
+          </p>
+          <div class="service-points-list">
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Direct Tie-ups with Leading Airlines:</strong> IndiGo, Air India, Singapore Airlines, and Batik Air for discounted group airfares from 40+ Indian airports.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>No Shared Cabs:</strong> You get a dedicated 7-Seater AC Innova or Sedan reserved exclusively for your family or couple throughout the 4 days.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Airport Placard Meet & Greet:</strong> Our driver waits right outside immigration with your name placard and chilled refreshments.</div>
+            </div>
+          </div>
+          <a href="index.html#bookingModal" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Book Flight + Cab Combo</a>
+        </div>
+        <div class="service-detail-visual">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Private Chauffeur & Flight Service">
+          <div class="service-visual-overlay">
+            <h4>Private AC Chauffeur & Airport Concierge</h4>
+            <p style="font-size: 0.8rem; opacity: 0.9;">Available 24x7 with English & Hindi speaking assistance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: Handpicked Stays & Luxury Villas -->
+  <section class="service-detail-section" id="service-hotels" style="background: white;">
+    <div class="container">
+      <div class="service-detail-grid reverse">
+        <div class="service-detail-text">
+          <div class="service-badge-pill"><i class="fa-solid fa-hotel"></i> Service 02 • Accommodation</div>
+          <h2>Verified 3★, 4★ Hotels & Romantic Private Pool Villas</h2>
+          <p>
+            Har hotel room me kya suvidha hogi, location kaisi hogi, pool clean hai ya nahi—ye sab pehle se audit kiya gaya hai.
+          </p>
+          <div class="service-points-list">
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>3-Star Deluxe:</strong> Prime Kuta & Legian beach spots with rooftop swimming pools, AC, and high-speed WiFi.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>4-Star Premium Resorts:</strong> Tropical lagoon pools, serene spa centers, and balcony rooms overlooking Balinese gardens.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>5-Star Honeymoon Pool Villas:</strong> 100% private secluded infinity pool, floating breakfast options, flower bed decor, and dedicated butler.</div>
+            </div>
+          </div>
+          <a href="index.html#hotels" class="btn btn-primary"><i class="fa-solid fa-bed"></i> Explore Room Photos</a>
+        </div>
+        <div class="service-detail-visual">
+          <img src="assets/images/bali-hero.jpg" alt="Bali Luxury Stays">
+          <div class="service-visual-overlay">
+            <h4>Luxury Pool Villas & Handpicked Resorts</h4>
+            <p style="font-size: 0.8rem; opacity: 0.9;">Verified properties with guaranteed Indian breakfast options</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Indian & Pure Veg Food Assurance -->
+  <section class="service-detail-section" id="service-food">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-text">
+          <div class="service-badge-pill"><i class="fa-solid fa-utensils"></i> Service 03 • Dining Care</div>
+          <h2>Guaranteed Indian, Pure Veg & Jain Meals Daily</h2>
+          <p>
+            Videsh ghoomne par sabse badi chinta khane ki hoti hai. Hamari service me daily Indian dinners include rehte hain, jisse aapko ghar jaisa swad mil sake.
+          </p>
+          <div class="service-points-list">
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Authentic Indian Restaurants:</strong> Tie-ups with Queen's Tandoor, Gateway of India, Sitara, and Nu Laba in Kuta and Seminyak.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Strict Veg & Jain Options:</strong> Separate kitchens and cooks ensuring no contamination. Pure Jain food (without onion and garlic) pre-ordered.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Delicious North & South Indian Menu:</strong> Paneer makhani, dal tadka, hot butter rotis, gulab jamun, and masala chai.</div>
+            </div>
+          </div>
+          <a href="index.html#bookingModal" class="btn btn-primary"><i class="fa-solid fa-bowl-food"></i> Add Meal Plan to Booking</a>
+        </div>
+        <div class="service-detail-visual">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" alt="Indian Food in Bali">
+          <div class="service-visual-overlay">
+            <h4>Fresh & Authentic Indian Dining Spread</h4>
+            <p style="font-size: 0.8rem; opacity: 0.9;">Pre-booked tables with zero waiting times</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 4: Visas, Forex, Safety & 24/7 Concierge -->
+  <section class="service-detail-section" id="service-visas" style="background: white;">
+    <div class="container">
+      <div class="service-detail-grid reverse">
+        <div class="service-detail-text">
+          <div class="service-badge-pill"><i class="fa-solid fa-shield-halved"></i> Service 04 • Safety & Visas</div>
+          <h2>E-Visa, Travel Insurance & 24/7 WhatsApp Concierge</h2>
+          <p>
+            Aapki trip shuru hone se lekar India wapas pahunchne tak har kadam par hamari support team aapke saath rehti hai.
+          </p>
+          <div class="service-points-list">
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Fast-Track E-VOA Processing:</strong> Official Indonesia electronic visa on arrival and Indonesian Customs QR declaration submitted smoothly.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>International Travel Insurance:</strong> Medical emergency cover up to $50,000, trip cancellation coverage, and lost baggage compensation.</div>
+            </div>
+            <div class="service-point-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Dedicated WhatsApp Group:</strong> Trip manager + local Bali chauffeur directly on WhatsApp with less than 5 minutes response time.</div>
+            </div>
+          </div>
+          <a href="https://wa.me/918046801919" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp Now</a>
+        </div>
+        <div class="service-detail-visual">
+          <img src="assets/images/uluwatu-sunset.jpg" alt="Bali Uluwatu Temple & Safety">
+          <div class="service-visual-overlay">
+            <h4>Full Support Throughout Your Trip</h4>
+            <p style="font-size: 0.8rem; opacity: 0.9;">Travel with 100% peace of mind</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How The Entire Service Workflow Works (Customer Journey) -->
+  <section class="section-wrapper" id="workflow">
+    <div class="container">
+      <div class="section-head text-center" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+        <div class="section-subtitle">Seamless Journey</div>
+        <h2 class="section-title">How Our Booking & Service Delivery Works</h2>
+        <p class="section-desc">From your first quote request to your return flight, here is the exact 4-step experience:</p>
+      </div>
+
+      <div class="workflow-timeline">
+        <div class="workflow-step-card">
+          <div class="step-number-circle">1</div>
+          <h3>Custom Quote</h3>
+          <p>Select your dates, travelers, hotel grade, and departure city. Get an itemized PDF quote on WhatsApp in 10 minutes.</p>
+        </div>
+        <div class="workflow-step-card">
+          <div class="step-number-circle">2</div>
+          <h3>Lock with 20%</h3>
+          <p>Confirm your booking by paying just 20% advance token amount. Get instant hotel confirmation and cab reservation voucher.</p>
+        </div>
+        <div class="workflow-step-card">
+          <div class="step-number-circle">3</div>
+          <h3>Visa & Concierge Setup</h3>
+          <p>Our team verifies your passport, completes your e-VOA and customs QR form, and creates your dedicated 24x7 WhatsApp support group.</p>
+        </div>
+        <div class="workflow-step-card">
+          <div class="step-number-circle">4</div>
+          <h3>Fly & Enjoy</h3>
+          <p>Land in Bali, get greeted with fresh flower garlands, enjoy private sightseeing with Indian meals, and make memories of a lifetime!</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
+          <i class="fa-solid fa-compass"></i> Explore Bali Package & Book Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0; justify-content: center; text-align: center;">
+        <div>
+          © 2026 AuraTravels Pvt. Ltd. All rights reserved. • Hello Travel & TravelSetu Full Service Architecture
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
